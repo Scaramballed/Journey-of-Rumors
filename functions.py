@@ -22,7 +22,6 @@ def pop_one(player):
     clear_screen()
     player.pop_substance(craving_change=-10)
     
-    # After popping, ask what to do next
     return after_pop_choice(player)
 
 def after_pop_choice(player):

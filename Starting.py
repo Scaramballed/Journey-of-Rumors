@@ -135,7 +135,7 @@ def game_loop(player):
 
             player.pop_substance(craving_change=-5)
 
-            # Check status after popping
+           
             if check_player_status(player):
                 return
 
@@ -178,13 +178,11 @@ def main():
 
     starting(player)
 
-    # Check status after starting (intro pop)
     if check_player_status(player):
         return
 
     game_loop(player)
 
-    # Check status after game loop
     if check_player_status(player):
         return
 
@@ -195,7 +193,6 @@ def main():
     elif location == "2":
         oth.going_out(player)
 
-    # Final check
     if check_player_status(player):
         return
 

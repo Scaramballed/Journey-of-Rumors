@@ -1,6 +1,6 @@
 import shutil
 from time import sleep
-import functions  # ← ADD THIS IMPORT
+import functions  
 
 def update_stat_animated(label, current_value, change, row):
     width = shutil.get_terminal_size().columns
@@ -26,7 +26,7 @@ class Player:
     def __init__(self):
         self.health = 100
         self.craving = 95
-        self.study_count = 0  # ← ADD THIS
+        self.study_count = 0  
 
     def pop_substance(self, craving_change):
         self.health = update_stat_animated(
@@ -44,7 +44,7 @@ class Player:
         )
 
         print("\033[4;1H", end="", flush=True)
-        self._check_status()  # ← ADD THIS
+        self._check_status()  
 
     def change_health(self, amount):
         self.health = update_stat_animated(
@@ -55,7 +55,7 @@ class Player:
         )
 
         print("\033[4;1H", end="", flush=True)
-        self._check_status()  # ← ADD THIS
+        self._check_status()  
 
     def change_craving(self, amount):
         self.craving = update_stat_animated(
@@ -65,10 +65,9 @@ class Player:
             2
         )
         print("\033[4;1H", end="", flush=True)
-        self._check_status()  # ← ADD THIS
+        self._check_status()  
 
-    def _check_status(self):  # ← ADD THIS ENTIRE METHOD
-        """Internal method to check and trigger terminal states."""
+    def _check_status(self):  
         if self.health <= 0:
             functions.death()
         elif self.craving >= 100:

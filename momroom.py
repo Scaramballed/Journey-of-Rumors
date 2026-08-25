@@ -75,7 +75,6 @@ def mom_room(player):
 
 
 def mom_room_menu(player):
-    """Show Mom's Room choices without replaying the room's intro dialogue."""
     while True:
         functions.clear_screen()
 
