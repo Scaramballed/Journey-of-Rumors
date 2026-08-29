@@ -50,7 +50,7 @@ def starting(player):
 
     functions.clear_screen()
 
-    player.pop_substance(craving_change=-5)
+    player.pop_substance(craving_change=-35) 
 
 
 def menu1(player):
@@ -135,7 +135,6 @@ def game_loop(player):
 
             player.pop_substance(craving_change=-5)
 
-           
             if check_player_status(player):
                 return
 

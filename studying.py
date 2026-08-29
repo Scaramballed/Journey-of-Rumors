@@ -6,7 +6,7 @@ import oth
 def session(player):
     functions.clear_screen()
     
-    if player.study_count >= 3:
+    if player.study_count >= 5:  # ← Changed from 3 to 5
         functions.sleeper([
             "You sit down to study...",
             "Your brain is completely fried.",
@@ -14,7 +14,7 @@ def session(player):
             "You can't focus on anything.",
             "This was a complete waste of time."
         ])
-        player.change_craving(amount=30)
+        player.change_craving(amount=35)  # ← Changed from 30 to 35
         player.study_count += 1
         return after_study_choice(player)
     
@@ -58,7 +58,7 @@ def session(player):
             "You typed it exactly right.",
             "You feel productive and focused."
         ])
-        player.change_craving(amount=-10)
+        player.change_craving(amount=-15)  
         
     else:
         functions.sleeper([
